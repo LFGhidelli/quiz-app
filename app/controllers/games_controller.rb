@@ -5,8 +5,6 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
-    @current_question_index = 0
-
     @question = Question.all
   end
 
@@ -16,6 +14,16 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create!()
+
+    redirect_to game_path(@game)
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    if params[:answer] == Question.all[@game.current_question_index].correct_answer
+      @game.increment!(:current_question_index)
+    end
+
 
     redirect_to game_path(@game)
   end

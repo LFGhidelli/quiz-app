@@ -8,10 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
+puts "Creating questions"
 question_one = Question.create!(
   content: "Quem foi o primeiro Imperador do Brasil?",
-  correct_answer: "D. Pedro I"
+  correct_answer: "Dom Pedro I"
 )
 
 question_one.answers.create!(
@@ -50,3 +50,4 @@ question_two.answers.create!(
 question_two.answers.create!(
   content: "Marechal Deodoro da Fonseca"
 )
+puts "Done!"

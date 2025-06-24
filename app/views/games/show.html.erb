@@ -1,3 +1,7 @@
 <h1>Game on!</h1>
 
-<%= @question[@current_question_index].content %>
+<%= @question[@game.current_question_index].content %>
+
+<% @question[@game.current_question_index].answers.each do |answer| %>
+  <%= button_to "#{answer.content}", game_path(@game), method: :patch, params: { answer: answer.content } %>
+<% end %>
