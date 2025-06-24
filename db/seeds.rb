@@ -15,12 +15,19 @@ question_one = Question.create!(
 )
 
 question_one.answers.create!(
-  content: [
-    { content: "Dom Pedro I" },
-    { content: "Dom João VI" },
-    { content: "Dom Pedro II" },
-    { content: "Juscelino Kubitschek" }
-  ]
+  content: "Juscelino Kubitschek"
+)
+
+question_one.answers.create!(
+  content: "Dom Pedro II"
+)
+
+question_one.answers.create!(
+  content: "Dom João VI"
+)
+
+question_one.answers.create!(
+  content: "Dom Pedro I"
 )
 
 question_two = Question.create!(
@@ -29,10 +36,17 @@ question_two = Question.create!(
 )
 
 question_two.answers.create!(
-  content: [
-    { content: "Eurico Gaspar Dutra" },
-    { content: "Floriano Peixoto"},
-    { content: "Getúlio Vargas" },
-    { content: "Marechal Deodoro da Fonseca" }
-  ]
+  content: "Eurico Gaspar Dutra"
+)
+
+question_two.answers.create!(
+  content: "Floriano Peixoto"
+)
+
+question_two.answers.create!(
+  content: "Getúlio Vargas"
+)
+
+question_two.answers.create!(
+  content: "Marechal Deodoro da Fonseca"
 )
