@@ -21,9 +21,9 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     if params[:answer] == Question.all[@game.current_question_index].correct_answer
+      flash[:notice] = "Correct!"
       @game.increment!(:current_question_index)
     end
-
 
     redirect_to game_path(@game)
   end
