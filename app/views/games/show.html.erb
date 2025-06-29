@@ -1,10 +1,9 @@
-<h1>Game on!</h1>
-
 <% if flash[:notice] %>
   <div class="alert alert-info ">
     <%= flash[:notice] %>
   </div>
 <% end %>
+
 <%= @question[@game.current_question_index].content %>
 <div class="w-100">
   <% @question[@game.current_question_index].answers.each do |answer| %>
