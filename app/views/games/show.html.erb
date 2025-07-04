@@ -1,12 +1,14 @@
-<% if flash[:notice] %>
-  <div class="alert alert-info ">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
 
-<%= @question[@game.current_question_index].content %>
-<div class="w-100">
-  <% @question[@game.current_question_index].answers.each do |answer| %>
-    <%= button_to "#{answer.content}", game_path(@game), method: :patch, params: { answer: answer.content }, class: "btn btn-success mt-4 w-100" %>
+  <% if flash[:notice] %>
+    <div class="alert alert-info mt-4" data-controller = "flash">
+      <%= flash[:notice] %>
+    </div>
   <% end %>
-</div>
+
+  <div class="w-100 mt-4">
+    <h2><%= @question[@game.current_question_index].content %></h2>
+    
+    <% @question[@game.current_question_index].answers.each do |answer| %>
+      <%= button_to "#{answer.content}", game_path(@game), method: :patch, params: { answer: answer.content }, class: "btn btn-success mt-4 w-100" %>
+    <% end %>
+  </div>
